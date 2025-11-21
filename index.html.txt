@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <style>
+    /* ========== Basic Reset ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background: #4a90e2;
+      color: #fff;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+    }
+
+    nav {
+      margin-top: 20px;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 40px auto;
+    }
+
+    .about,
+    .projects,
+    .contact {
+      margin-bottom: 60px;
+    }
+
+    .about h2,
+    .projects h2,
+    .contact h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #4a90e2;
+    }
+
+    .about p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .project {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+    }
+
+    .project h3 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .project p {
+      color: #666;
+    }
+
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 400px;
+    }
+
+    .contact input,
+    .contact textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .contact button {
+      background: #4a90e2;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+
+    .contact button:hover {
+      background: #357ab8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Name</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section id="about" class="about">
+      <h2>About Me</h2>
+      <p>
+        I’m a graphic designer / web developer / creative professional (choose
+        what fits), passionate about creating beautiful and functional designs.
+        I’ve worked on project A, B, and C. I love learning new tools and
+        pushing the boundaries of design.
+      </p>
+    </section>
+
+    <section id="projects" class="projects">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <div class="project">
+          <h3>Project 1</h3>
+          <p>A short description of this project — what it is, what you did, and what skills you used.</p>
+        </div>
+        <div class="project">
+          <h3>Project 2</h3>
+          <p>Description of project 2.</p>
+        </div>
+        <div class="project">
+          <h3>Project 3</h3>
+          <p>Description of project 3.</p>
+        </div>
+        <!-- Add more project cards as needed -->
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact Me</h2>
+      <form onsubmit="submitForm(event)">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </div>
+
+  <footer>
+    &copy; <span id="year"></span> My Portfolio. All rights reserved.
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Dummy form submission
+    function submitForm(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      alert(`Thanks, ${name}! Your message has been received.`);
+
+      // Optionally reset the form
+      event.target.reset();
+    }
+  </script>
+</body>
+</html>
